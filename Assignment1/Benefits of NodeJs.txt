@@ -1,0 +1,7 @@
+Benefits of NodeJs
+i) Asynchronous I/O: Its asynchronous, non-blocking I/O model allows multiple tasks to be handled concurrently without waiting for one to complete before moving on to the next.
+ii) Single Language : Node.js enables developers to use JavaScript for both server-side and client-side scripting.
+iii) NPM (Node Package Manager): Node.js comes with a powerful package manager, NPM, which allows developers to easily install, manage, and share third-party libraries and packages. 
+iv) Scalability: Due to its asynchronous and non-blocking nature, Node.js is highly scalable.
+v) Performance: Node.js is built on the V8 JavaScript runtime engine, developed by Google, which compiles JavaScript directly into machine code. 
+	This leads to faster execution of code, making Node.js well-suited for handling high-traffic applications and real-time applications.
