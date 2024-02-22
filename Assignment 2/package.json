@@ -1,0 +1,13 @@
+{
+  "name": "moneyinterest.js",
+  "version": "1.0.0",
+  "description": "To calculate simple and compound interest",
+  "main": "interest.js",
+  "type": "module",
+  "scripts": {
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
