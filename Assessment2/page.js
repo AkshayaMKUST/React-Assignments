@@ -49,6 +49,7 @@ userData.push({
 });
 
 localStorage.setItem("userData", JSON.stringify(userData));
+sessionStorage.setItem("loggedInUsername", user);
 window.location.href = 'profilepage.html';
 return false;
 
@@ -61,6 +62,7 @@ var username = document.getElementById("login-username").value;
 var password = document.getElementById("login-pass").value;
 
 if (checkLogin(username, password)) {
+  sessionStorage.setItem("loggedInUsername", username);
   window.location.href='profilepage.html';
   return false;
 } else {
