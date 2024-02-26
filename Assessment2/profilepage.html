@@ -17,7 +17,30 @@
         <div id="userProfile"></div>
     </div>
     <script>
-        let userData = JSON.parse(localStorage.getItem("userData")) || [];
+        
+        function getLoggedInUserData() {
+            let loggedInUsername = sessionStorage.getItem("loggedInUsername");
+            let userData = JSON.parse(localStorage.getItem("userData")) || [];
+            return userData.find(user => user.username === loggedInUsername);
+        }
+
+        // Get the logged-in user's data
+        let currentUser = getLoggedInUserData();
+
+        // Check if the user data for the logged-in user exists
+        if (currentUser) {
+            let userProfileDiv = document.getElementById("userProfile");
+            let profileImage = document.getElementById("userPhoto");
+            userProfileDiv.innerHTML = `<h2>Welcome </h2> <h2>${currentUser.username}</h2>
+              <p>First Name: ${currentUser.firstname}</p>
+              <p>Last Name: ${currentUser.lastname}</p>
+              <p>Email: ${currentUser.email}</p>
+              <p>Phone Number: ${currentUser.phonenumber}</p>
+              <p>Date of Birth: ${currentUser.dateofbirth}</p>
+              <p>Gender: ${currentUser.gender}</p>`;
+            profileImage.src = currentUser.photo;
+        } else {
+            let userData = JSON.parse(localStorage.getItem("userData")) || [];
         let userProfileDiv = document.getElementById("userProfile");
         let profileImage = document.getElementById("userPhoto");
         let currentUser = userData[userData.length - 1];
@@ -29,7 +52,7 @@
           <p>Date of Birth: ${currentUser.dateofbirth}</p>
           <p>Gender: ${currentUser.gender}</p>`;
           profileImage.src = currentUser.photo; 
-
+        }
       </script>
 </body>
 </html>
