@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="page.js"></script>
+    <link rel="stylesheet" href="profilestyle.css">
+</head>
+
+<body>
+    <div id="userProfileContainer">
+        <div class="profileimage"> 
+            <img src="" alt="User Photo" id="userPhoto">
+        </div>
+        <div id="userProfile"></div>
+    </div>
+    <script>
+        let userData = JSON.parse(localStorage.getItem("userData")) || [];
+        let userProfileDiv = document.getElementById("userProfile");
+        let profileImage = document.getElementById("userPhoto");
+        let currentUser = userData[userData.length - 1];
+        userProfileDiv.innerHTML = `<h2>Welcome </h2> <h2>${currentUser.username}</h2>
+          <p>First Name: ${currentUser.firstname}</p>
+          <p>Last Name: ${currentUser.lastname}</p>
+          <p>Email: ${currentUser.email}</p>
+          <p>Phone Number: ${currentUser.phonenumber}</p>
+          <p>Date of Birth: ${currentUser.dateofbirth}</p>
+          <p>Gender: ${currentUser.gender}</p>`;
+          profileImage.src = currentUser.photo; 
+
+      </script>
+</body>
+</html>
