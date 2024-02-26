@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Registration</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="page.js"></script>
+</head>
+<body>
+    <main>
+        <div class="regdiv">
+            <h2>Register</h2>
+            <form id="regform" action=""  onsubmit="return storeData();">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required="">
+                </div>
+                <div>
+                    <label for="firstname">Firstname</label>
+                    <input type="text" id="firstname" required="">
+                </div>
+                <div>
+                    <label for="lastname">Lastname</label>
+                    <input type="text" id="lastname" required="">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required="">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="pass" required="" oninput="validatePassword()"><br>
+                    
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div>
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required="" oninput="validatePassword()"><br>
+                    <span class="error-message" id="confirmPassword-error"></span>
+                </div>
+                <div>
+                    <label for="number">Phone number</label>
+                    <select class="numselect" name="" id="countrycode">
+                        <option value="India">+91</option>
+                        <option value="UAE">+971</option>
+                    </select>
+                    <input class="num" type="text" name="number" id="number" required="">
+                </div>
+                <div>
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" id="dob" required="">
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <input class="radio" type="radio" value="Male" name="gender" id="male">Male
+                    <input class="radio" type="radio" value="Female" name="gender" id="female">Female
+                    <input class="radio" type="radio" value="Others" name="gender" id="other">Others
+                </div>
+                <div>
+                    <label for="photo">Upload Photo</label>
+                    <input type="file" name="photo" id="photo">
+                </div>
+
+                <div>
+                    <input class="condition" type="checkbox" name="" id="condition">I accept the terms and conditions
+                </div> 
+                
+                <button class="sub" type="submit">Submit</button>
+            </form>
+            <h4>Already have an account? <a href="loginpage.html">Login</a></h4>
+        </div>
+    </main>
+</body>
+</html>
